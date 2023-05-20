@@ -6,13 +6,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -21,6 +18,7 @@ import Stack from "@mui/material/Stack";
 import yourImage from "../static/portfolio_1x1.jpg";
 import { Grid } from "@mui/material";
 
+import Eme from "./progressbar/Eme";
 const drawerWidth = 350;
 
 function ResponsiveDrawer(props) {
@@ -86,11 +84,12 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar
-        // sx={{ display: { sm: "none" } }}
+          // sx={{ display: { sm: "none" } }}
+          sx={{ backgroundColor: "white" }}
         >
           {/* NAV BAR NONE */}
           <IconButton
-            color="inherit"
+            color="black"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
@@ -148,13 +147,10 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
-        <Grid container spacing={2}>
-          <Grid xs={0.5}></Grid>
-          <Grid
-            item
-            xs={11.5}
-            sx={{ border: "1px solid grey", textAlign: "left" }}
-          >
+        <Grid container spacing={5}>
+          {/*ABOUT ME*/}
+          <Grid sm={0.5} xs={{ display: { xs: "none" } }}></Grid>
+          <Grid item sm={11} sx={{ textAlign: "left" }}>
             <Typography
               variant="overline"
               sx={{
@@ -185,21 +181,92 @@ function ResponsiveDrawer(props) {
                 textTransform: "none",
                 lineHeight: "1.7",
                 wordSpacing: "2px",
+                textAlign: "justify",
               }}
             >
-              <span>
-                <b style={{ fontWeight: "bold", letterSpacing: "3px" }}>
-                  Hi, I'm Johnn Llyod F. Cruz,
-                </b>
-              </span>{" "}
-              I have been working as an Senior Network Specialist on a Network
-              Local Provider here in Eastern Visayas for just 1 year and 6
-              months. I was started as a I.T Staff and was promoted after 6
-              months, and also I have been working as a Front-End Web Developer
-              as a Part-timer for almost 1 year. I am passionate about learning
-              new skills and I have completed a number of training courses.
+              {" "}
+              <div style={{ textAlign: "justify" }}>
+                <span>
+                  <b style={{ fontWeight: "bold", letterSpacing: "3px" }}>
+                    Hi, I'm Johnn Llyod F. Cruz,
+                  </b>
+                </span>{" "}
+                a fresh graduate with a passion for continuous learning and
+                personal growth. Throughout my academic journey, I have
+                developed a strong foundation in web development and machine
+                learning, equipping me with the necessary knowledge and skills
+                to thrive in the professional world. I possess a keen eye for
+                detail, a strong work ethic, and a natural curiosity that drives
+                me to seek innovative solutions to challenges. Alongside my
+                academic pursuits, I have actively engaged in various
+                extracurricular activities, honing my leadership and teamwork
+                abilities. I believe in the power of collaboration and enjoy
+                working alongside diverse teams to achieve common goals. As a
+                lifelong learner, I am eager to embark on new experiences and
+                contribute my skills to a dynamic and forward-thinking
+                organization. With a commitment to excellence, adaptability, and
+                a growth mindset, I am excited to make a meaningful impact and
+                contribute to the success of any team I am a part of.
+              </div>
             </Typography>
           </Grid>
+          <Grid sm={0.5} xs={{ display: { xs: "none" } }}></Grid>
+          {/*END OF ABOUT ME*/}
+
+          {/*MY SPECIALTY*/}
+          <Grid sm={0.5} xs={{ display: { xs: "none" } }}></Grid>
+          <Grid item sm={11} sx={{ textAlign: "left" }}>
+            <Typography
+              variant="overline"
+              sx={{
+                opacity: 0.8,
+                letterSpacing: "3px",
+                textTransform: "none",
+                fontSize: 12,
+              }}
+            >
+              MY SPECIALTY
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                letterSpacing: "5px",
+                mb: ".70em",
+              }}
+            >
+              MY SKILLS
+            </Typography>
+
+            <Typography
+              variant="overline"
+              sx={{
+                opacity: 0.6,
+                letterSpacing: ".6px",
+                fontVariationSettings: "'wght' 50",
+                textTransform: "none",
+                lineHeight: "1.7",
+                wordSpacing: "2px",
+                textAlign: "justify",
+              }}
+            >
+              <div style={{ textAlign: "justify" }}>
+                {/* <span>
+                  <b style={{ fontWeight: "bold", letterSpacing: "3px" }}>
+                    Hi, I'm Johnn Llyod F. Cruz,
+                  </b>
+                </span>{" "} */}
+                A front-end developer who is have an experience in UI/UX
+                development. For the past 1 year, have been designing and
+                developing websites, using a keen eye for interactive design to
+                develop pixel-perfect code that translates static design
+                concepts into engaging digital experiences. Main areas of focus
+                are in HTML5, Bootstrap / CSS3, and JavaScript.
+              </div>
+              <Eme />
+            </Typography>
+          </Grid>
+          <Grid sm={0.5} xs={{ display: { xs: "none" } }}></Grid>
+          {/*END OF MY SPECIALTY*/}
         </Grid>
       </Box>
     </Box>
