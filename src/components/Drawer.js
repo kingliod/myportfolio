@@ -85,7 +85,10 @@ function ResponsiveDrawer(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar
+        // sx={{ display: { sm: "none" } }}
+        >
+          {/* NAV BAR NONE */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -146,21 +149,55 @@ function ResponsiveDrawer(props) {
       >
         <Toolbar />
         <Grid container spacing={2}>
+          <Grid xs={0.5}></Grid>
           <Grid
             item
-            xs={12}
+            xs={11.5}
             sx={{ border: "1px solid grey", textAlign: "left" }}
           >
-            <Typography sx={{}}>ABOUT ME</Typography>
-            <Typography variant="h3">WHO AM I?</Typography>
-            <Typography>
-              Hi I'm Ejiph B. Dizon, I have been working as an Senior Network
-              Specialist on a Network Local Provider here in Eastern Visayas for
-              just 1 year and 6 months. I was started as a I.T Staff and was
-              promoted after 6 months, and also I have been working as a
-              Front-End Web Developer as a Part-timer for almost 1 year. I am
-              passionate about learning new skills and I have completed a number
-              of training courses.
+            <Typography
+              variant="overline"
+              sx={{
+                opacity: 0.8,
+                letterSpacing: "3px",
+                textTransform: "none",
+                fontSize: 12,
+              }}
+            >
+              ABOUT ME
+            </Typography>
+            <Typography
+              variant="h6"
+              sx={{
+                letterSpacing: "5px",
+                mb: ".70em",
+              }}
+            >
+              WHO AM I?
+            </Typography>
+
+            <Typography
+              variant="overline"
+              sx={{
+                opacity: 0.6,
+                letterSpacing: ".6px",
+                fontVariationSettings: "'wght' 50",
+                textTransform: "none",
+                lineHeight: "1.7",
+                wordSpacing: "2px",
+              }}
+            >
+              <span>
+                <b style={{ fontWeight: "bold", letterSpacing: "3px" }}>
+                  Hi, I'm Johnn Llyod F. Cruz,
+                </b>
+              </span>{" "}
+              I have been working as an Senior Network Specialist on a Network
+              Local Provider here in Eastern Visayas for just 1 year and 6
+              months. I was started as a I.T Staff and was promoted after 6
+              months, and also I have been working as a Front-End Web Developer
+              as a Part-timer for almost 1 year. I am passionate about learning
+              new skills and I have completed a number of training courses.
             </Typography>
           </Grid>
         </Grid>

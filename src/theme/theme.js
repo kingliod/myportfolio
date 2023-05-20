@@ -32,7 +32,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "BlinkMacSystemFont",
+    fontFamily: "Poppins, sans-serif",
     fontSize: 16,
   },
 });
