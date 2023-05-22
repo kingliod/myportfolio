@@ -18,7 +18,7 @@ import Stack from "@mui/material/Stack";
 import yourImage from "../static/portfolio_1x1.jpg";
 import { Grid } from "@mui/material";
 
-import Eme from "./progressbar/Eme";
+import ProgressBar from "./progressbar/PythonBar";
 const drawerWidth = 350;
 
 function ResponsiveDrawer(props) {
@@ -34,6 +34,7 @@ function ResponsiveDrawer(props) {
       <Toolbar />
       <Divider />
 
+      {/* PICTURE */}
       <Stack
         direction="row"
         spacing={2}
@@ -49,6 +50,7 @@ function ResponsiveDrawer(props) {
         John Llyod F. Cruz
       </ListItemText>
 
+      {/* ABOUT, SKILLS, EDU .. */}
       <List>
         {["About", "Skills", "Education", "Experience", "Contact"].map(
           (text, index) => (
@@ -76,36 +78,39 @@ function ResponsiveDrawer(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
+
+      {/* TOP APP BAR */}
       <AppBar
         position="fixed"
         sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
+          width: { md: `calc(100% - ${drawerWidth}px)` },
+          ml: { md: `${drawerWidth}px` },
         }}
       >
         <Toolbar
-          // sx={{ display: { sm: "none" } }}
           sx={{ backgroundColor: "white" }}
         >
-          {/* NAV BAR NONE */}
+      
           <IconButton
             color="black"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, display: { md: "none" } }}
           >
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div"></Typography>
         </Toolbar>
       </AppBar>
+
+      {/* SIDE BAR */}
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ width: { md: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
       >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        {/* TOGGLE WHEN SM OR XS */}
         <Drawer
           container={container}
           variant="temporary"
@@ -115,7 +120,7 @@ function ResponsiveDrawer(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { sm: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
@@ -124,10 +129,12 @@ function ResponsiveDrawer(props) {
         >
           {drawer}
         </Drawer>
+
+        {/* SIDE BAR IS DISPLAYED WHEN FULL SIZE */}
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: "none", sm: "block" },
+            display: { xs: "none", sm: "none", md:"block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
@@ -143,14 +150,16 @@ function ResponsiveDrawer(props) {
         sx={{
           flexGrow: 1,
           p: 3,
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
+          width: { md: `calc(100% - ${drawerWidth}px)` },
         }}
       >
         <Toolbar />
+        
+        <Box sx={{ ml: { sm: 5 }, mr: { sm: 5 } }}>
+
         <Grid container spacing={5}>
-          {/*ABOUT ME*/}
-          <Grid sm={0.5} xs={{ display: { xs: "none" } }}></Grid>
-          <Grid item sm={11} sx={{ textAlign: "left" }}>
+          {/*-----ABOUT ME------*/}
+          <Grid item sm={12} sx={{ textAlign: "left" }}>
             <Typography
               variant="overline"
               sx={{
@@ -210,12 +219,10 @@ function ResponsiveDrawer(props) {
               </div>
             </Typography>
           </Grid>
-          <Grid sm={0.5} xs={{ display: { xs: "none" } }}></Grid>
           {/*END OF ABOUT ME*/}
 
-          {/*MY SPECIALTY*/}
-          <Grid sm={0.5} xs={{ display: { xs: "none" } }}></Grid>
-          <Grid item sm={11} sx={{ textAlign: "left" }}>
+          {/*-----MY SPECIALTY-----*/}
+          <Grid item sm={12} sx={{ textAlign: "left" }}>
             <Typography
               variant="overline"
               sx={{
@@ -262,12 +269,17 @@ function ResponsiveDrawer(props) {
                 concepts into engaging digital experiences. Main areas of focus
                 are in HTML5, Bootstrap / CSS3, and JavaScript.
               </div>
-              <Eme />
+            
             </Typography>
+            
           </Grid>
-          <Grid sm={0.5} xs={{ display: { xs: "none" } }}></Grid>
+
+          <Grid item md={6} sm={12} xs={12}> <ProgressBar /></Grid>
+          <Grid item md={6} sm={12} xs={12}> <ProgressBar /></Grid>
+      
           {/*END OF MY SPECIALTY*/}
         </Grid>
+        </Box>
       </Box>
     </Box>
   );

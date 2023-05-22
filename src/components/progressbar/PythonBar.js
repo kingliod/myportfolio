@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import LinearProgress from "@mui/material/LinearProgress";
 import Box from "@mui/material/Box";
+import { Typography } from "@mui/material";
 
 const MyLinearProgress = () => {
   const [progress1, setProgress1] = useState(0);
   const [progress2, setProgress2] = useState(0);
+  const [progress3, setProgress3] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const progressRef = useRef(null);
 
@@ -15,6 +17,7 @@ const MyLinearProgress = () => {
         if (!entry.isIntersecting) {
           setProgress1(0);
           setProgress2(0);
+          setProgress3(0);
         }
       },
       { threshold: 0.1 }
@@ -36,8 +39,9 @@ const MyLinearProgress = () => {
 
     if (isLoading) {
       timer = setInterval(() => {
-        setProgress1((prevProgress) => Math.min(prevProgress + 1, 80));
-        setProgress2((prevProgress) => Math.min(prevProgress + 1, 70));
+        setProgress1((prevProgress) => Math.min(prevProgress + 1, 85));
+        setProgress2((prevProgress) => Math.min(prevProgress + 1, 80));
+        setProgress3((prevProgress) => Math.min(prevProgress + 1, 95));
       }, 3);
     }
 
@@ -46,32 +50,62 @@ const MyLinearProgress = () => {
     };
   }, [isLoading]);
 
+  //CSS PROGRESS BAR
   const linearProgressStyle = {
     backgroundColor: "#dcdcdc",
     "& .MuiLinearProgress-bar": { backgroundColor: "#2196f3" },
-    height: 6.5,
+    height: 5,
+    flexGrow: 1, 
+    marginLeft: 1,
   };
 
+  //CSS PROGRESS BAR BOX
+  const linearProgressBox = {
+    display: 'flex', alignItems: 'center',
+    textAlign:"right"  
+  };
+
+  
   return (
     <Box ref={progressRef}>
-      {isLoading && (
-        <>
+    {isLoading && (
+      <>
+        <Typography variant="body1" 
+        sx={{  
+        letterSpacing: "4px",
+        // mb: ".70em",
+        }}>
+        Python
+        </Typography>
+
+        <Box sx={{...linearProgressBox}}>
+          <Typography variant="caption" sx={{ width: 150}}>Syntax and Basics:</Typography>
           <LinearProgress
             variant="determinate"
             value={progress1}
-            color="secondary"
-            sx={linearProgressStyle}
+            sx={{... linearProgressStyle}}
           />
-          <br />
-          <LinearProgress
+        </Box>
+        <Box sx={{...linearProgressBox}}>
+          <Typography variant="caption" sx={{ width: 150}}>Problem Solving:</Typography>
+            <LinearProgress
             variant="determinate"
             value={progress2}
-            color="secondary"
-            sx={linearProgressStyle}
-          />
-        </>
-      )}
-    </Box>
+            sx={{... linearProgressStyle}}
+             />
+        </Box>
+        <Box sx={{...linearProgressBox}}>
+          <Typography variant="caption" sx={{ width: 150}}>Development & Tools:</Typography>
+          <LinearProgress
+            variant="determinate"
+            value={progress3}
+            sx={{ ...linearProgressStyle }}
+            />
+        </Box>
+
+      </>
+    )}
+  </Box>
   );
 };
 // MAKE THE COMPONENT EXPORT SEPERATELY TO USE IN SPECIFIC SKILL
