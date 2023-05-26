@@ -65,7 +65,15 @@ const MyLinearProgress = () => {
     textAlign:"right"  
   };
 
-  
+  const barTypographyStyle = {
+    opacity: 0.7,
+    letterSpacing: ".6px",
+    fontVariationSettings: "'wght' 70",
+    textTransform: "none",
+    lineHeight: "1.7",
+    wordSpacing: "2px",
+    width: 150
+  }
   return (
     <Box ref={progressRef}>
     {isLoading && (
@@ -79,7 +87,7 @@ const MyLinearProgress = () => {
         </Typography>
 
         <Box sx={{...linearProgressBox}}>
-          <Typography variant="caption" sx={{ width: 150}}>Syntax and Basics:</Typography>
+          <Typography variant="caption" sx={{...barTypographyStyle}}>Syntax and Basics:</Typography>
           <LinearProgress
             variant="determinate"
             value={progress1}
@@ -87,7 +95,7 @@ const MyLinearProgress = () => {
           />
         </Box>
         <Box sx={{...linearProgressBox}}>
-          <Typography variant="caption" sx={{ width: 150}}>Problem Solving:</Typography>
+          <Typography variant="caption" sx={{...barTypographyStyle}}>Problem Solving:</Typography>
             <LinearProgress
             variant="determinate"
             value={progress2}
@@ -95,7 +103,7 @@ const MyLinearProgress = () => {
              />
         </Box>
         <Box sx={{...linearProgressBox}}>
-          <Typography variant="caption" sx={{ width: 150}}>Development & Tools:</Typography>
+          <Typography variant="caption" sx={{...barTypographyStyle}}>Development & Tools:</Typography>
           <LinearProgress
             variant="determinate"
             value={progress3}

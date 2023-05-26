@@ -87,10 +87,7 @@ function ResponsiveDrawer(props) {
           ml: { md: `${drawerWidth}px` },
         }}
       >
-        <Toolbar
-          sx={{ backgroundColor: "white" }}
-        >
-      
+        <Toolbar sx={{ backgroundColor: "white" }}>
           <IconButton
             color="black"
             aria-label="open drawer"
@@ -134,7 +131,7 @@ function ResponsiveDrawer(props) {
         <Drawer
           variant="permanent"
           sx={{
-            display: { xs: "none", sm: "none", md:"block" },
+            display: { xs: "none", sm: "none", md: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
@@ -154,131 +151,135 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar />
-        
+
         <Box sx={{ ml: { sm: 5 }, mr: { sm: 5 } }}>
+          <Grid container spacing={5}>
+            {/*-----ABOUT ME------*/}
+            <Grid item sm={12} sx={{ textAlign: "left" }}>
+              <Typography
+                variant="overline"
+                sx={{
+                  opacity: 0.8,
+                  letterSpacing: "3px",
+                  textTransform: "none",
+                  fontSize: 12,
+                }}
+              >
+                ABOUT ME
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  letterSpacing: "5px",
+                  mb: ".70em",
+                }}
+              >
+                WHO AM I?
+              </Typography>
 
-        <Grid container spacing={5}>
-          {/*-----ABOUT ME------*/}
-          <Grid item sm={12} sx={{ textAlign: "left" }}>
-            <Typography
-              variant="overline"
-              sx={{
-                opacity: 0.8,
-                letterSpacing: "3px",
-                textTransform: "none",
-                fontSize: 12,
-              }}
-            >
-              ABOUT ME
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                letterSpacing: "5px",
-                mb: ".70em",
-              }}
-            >
-              WHO AM I?
-            </Typography>
+              <Typography
+                variant="overline"
+                sx={{
+                  opacity: 0.6,
+                  letterSpacing: ".6px",
+                  fontVariationSettings: "'wght' 50",
+                  textTransform: "none",
+                  lineHeight: "1.7",
+                  wordSpacing: "2px",
+                  textAlign: "justify",
+                }}
+              >
+                {" "}
+                <div style={{ textAlign: "justify" }}>
+                  <span>
+                    <b style={{ fontWeight: "bold", letterSpacing: "3px" }}>
+                      Hi, I'm Johnn Llyod F. Cruz,
+                    </b>
+                  </span>{" "}
+                  a fresh graduate with a passion for continuous learning and
+                  personal growth. Throughout my academic journey, I have
+                  developed a strong foundation in web development and machine
+                  learning, equipping me with the necessary knowledge and skills
+                  to thrive in the professional world. I possess a keen eye for
+                  detail, a strong work ethic, and a natural curiosity that
+                  drives me to seek innovative solutions to challenges.
+                  Alongside my academic pursuits, I have actively engaged in
+                  various extracurricular activities, honing my leadership and
+                  teamwork abilities. I believe in the power of collaboration
+                  and enjoy working alongside diverse teams to achieve common
+                  goals. As a lifelong learner, I am eager to embark on new
+                  experiences and contribute my skills to a dynamic and
+                  forward-thinking organization. With a commitment to
+                  excellence, adaptability, and a growth mindset, I am excited
+                  to make a meaningful impact and contribute to the success of
+                  any team I am a part of.
+                </div>
+              </Typography>
+            </Grid>
+            {/*END OF ABOUT ME*/}
+            {/* ss */}
+            {/*-----MY SPECIALTY-----*/}
+            <Grid item sm={12} sx={{ textAlign: "left" }}>
+              <Typography
+                variant="overline"
+                sx={{
+                  opacity: 0.8,
+                  letterSpacing: "3px",
+                  textTransform: "none",
+                  fontSize: 12,
+                }}
+              >
+                MY SPECIALTY
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  letterSpacing: "5px",
+                  mb: ".70em",
+                }}
+              >
+                MY SKILLS
+              </Typography>
 
-            <Typography
-              variant="overline"
-              sx={{
-                opacity: 0.6,
-                letterSpacing: ".6px",
-                fontVariationSettings: "'wght' 50",
-                textTransform: "none",
-                lineHeight: "1.7",
-                wordSpacing: "2px",
-                textAlign: "justify",
-              }}
-            >
-              {" "}
-              <div style={{ textAlign: "justify" }}>
-                <span>
-                  <b style={{ fontWeight: "bold", letterSpacing: "3px" }}>
-                    Hi, I'm Johnn Llyod F. Cruz,
-                  </b>
-                </span>{" "}
-                a fresh graduate with a passion for continuous learning and
-                personal growth. Throughout my academic journey, I have
-                developed a strong foundation in web development and machine
-                learning, equipping me with the necessary knowledge and skills
-                to thrive in the professional world. I possess a keen eye for
-                detail, a strong work ethic, and a natural curiosity that drives
-                me to seek innovative solutions to challenges. Alongside my
-                academic pursuits, I have actively engaged in various
-                extracurricular activities, honing my leadership and teamwork
-                abilities. I believe in the power of collaboration and enjoy
-                working alongside diverse teams to achieve common goals. As a
-                lifelong learner, I am eager to embark on new experiences and
-                contribute my skills to a dynamic and forward-thinking
-                organization. With a commitment to excellence, adaptability, and
-                a growth mindset, I am excited to make a meaningful impact and
-                contribute to the success of any team I am a part of.
-              </div>
-            </Typography>
-          </Grid>
-          {/*END OF ABOUT ME*/}
-
-          {/*-----MY SPECIALTY-----*/}
-          <Grid item sm={12} sx={{ textAlign: "left" }}>
-            <Typography
-              variant="overline"
-              sx={{
-                opacity: 0.8,
-                letterSpacing: "3px",
-                textTransform: "none",
-                fontSize: 12,
-              }}
-            >
-              MY SPECIALTY
-            </Typography>
-            <Typography
-              variant="h6"
-              sx={{
-                letterSpacing: "5px",
-                mb: ".70em",
-              }}
-            >
-              MY SKILLS
-            </Typography>
-
-            <Typography
-              variant="overline"
-              sx={{
-                opacity: 0.6,
-                letterSpacing: ".6px",
-                fontVariationSettings: "'wght' 50",
-                textTransform: "none",
-                lineHeight: "1.7",
-                wordSpacing: "2px",
-                textAlign: "justify",
-              }}
-            >
-              <div style={{ textAlign: "justify" }}>
-                {/* <span>
+              <Typography
+                variant="overline"
+                sx={{
+                  opacity: 0.6,
+                  letterSpacing: ".6px",
+                  fontVariationSettings: "'wght' 50",
+                  textTransform: "none",
+                  lineHeight: "1.7",
+                  wordSpacing: "2px",
+                  textAlign: "justify",
+                }}
+              >
+                <div style={{ textAlign: "justify" }}>
+                  {/* <span>
                   <b style={{ fontWeight: "bold", letterSpacing: "3px" }}>
                     Hi, I'm Johnn Llyod F. Cruz,
                   </b>
                 </span>{" "} */}
-                A front-end developer who is have an experience in UI/UX
-                development. For the past 1 year, have been designing and
-                developing websites, using a keen eye for interactive design to
-                develop pixel-perfect code that translates static design
-                concepts into engaging digital experiences. Main areas of focus
-                are in HTML5, Bootstrap / CSS3, and JavaScript.
-              </div>
-            
-            </Typography>
-            
-          </Grid>
+                  A front-end developer who is have an experience in UI/UX
+                  development. For the past 1 year, have been designing and
+                  developing websites, using a keen eye for interactive design
+                  to develop pixel-perfect code that translates static design
+                  concepts into engaging digital experiences. Main areas of
+                  focus are in HTML5, Bootstrap / CSS3, and JavaScript.
+                </div>
+              </Typography>
+            </Grid>
 
-          <Grid item md={6} sm={12} xs={12}> <ProgressBar /></Grid>
-          <Grid item md={6} sm={12} xs={12}> <ProgressBar /></Grid>
-      
-          {/*END OF MY SPECIALTY*/}
-        </Grid>
+            <Grid item md={6} sm={12} xs={12}>
+              {" "}
+              <ProgressBar />
+            </Grid>
+            <Grid item md={6} sm={12} xs={12}>
+              {" "}
+              <ProgressBar />
+            </Grid>
+
+            {/*END OF MY SPECIALTY*/}
+          </Grid>
         </Box>
       </Box>
     </Box>
