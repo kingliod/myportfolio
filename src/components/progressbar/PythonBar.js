@@ -117,5 +117,5 @@ const MyLinearProgress = () => {
   );
 };
 // MAKE THE COMPONENT EXPORT SEPERATELY TO USE IN SPECIFIC SKILL
-//try using star  ss
+//try using star  ssss
 export default MyLinearProgress;
